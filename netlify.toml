@@ -1,0 +1,11 @@
+# Build no Netlify (00023): o Nitro reconhece o Netlify (variavel NETLIFY) e
+# gera o site estatico em dist/ e o SSR como Netlify Functions.
+#
+# A loja (RHFACTOR_STORE_ID) e os enderecos da plataforma (RHFACTOR_*_BASE)
+# chegam como variaveis de ambiente do site, gravadas pelo cloud-management.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"

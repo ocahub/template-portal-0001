@@ -1,0 +1,980 @@
+{
+  "id": "template-portal-0001",
+  "name": "Portal 0001 · Imóveis da região",
+  "version": "1.0.0",
+  "description": "Site de portal de imóveis (da plataforma): busca, vitrines de todas as imobiliárias participantes, categorias, bairros, a lista das imobiliárias e o convite para anunciar.",
+  "modules": [
+    "portal"
+  ],
+  "groups": [
+    "Topo",
+    "Imóveis",
+    "Conteúdo",
+    "Contato"
+  ],
+  "theme": {
+    "palettes": [
+      {
+        "id": "oceano",
+        "label": "Oceano",
+        "primary": "#0f2c40",
+        "accent": "#1b8389",
+        "soft": "#eef5f5",
+        "ink": "#13222c"
+      },
+      {
+        "id": "areia",
+        "label": "Areia",
+        "primary": "#2d2722",
+        "accent": "#a8732f",
+        "soft": "#f6f0e6",
+        "ink": "#241f1a"
+      },
+      {
+        "id": "laranja",
+        "label": "Laranja",
+        "primary": "#1d1d1f",
+        "accent": "#e25a00",
+        "soft": "#f6f2ee",
+        "ink": "#1d1d1f"
+      },
+      {
+        "id": "mata",
+        "label": "Mata",
+        "primary": "#1d3a31",
+        "accent": "#3b8259",
+        "soft": "#edf4ef",
+        "ink": "#17251f"
+      }
+    ],
+    "fonts": [
+      {
+        "id": "classica",
+        "label": "Clássica",
+        "display": "'DM Serif Display', Georgia, serif",
+        "body": "'Manrope', system-ui, sans-serif",
+        "weight": 400
+      },
+      {
+        "id": "moderna",
+        "label": "Moderna",
+        "display": "'Manrope', system-ui, sans-serif",
+        "body": "'Manrope', system-ui, sans-serif",
+        "weight": 800
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "header",
+      "label": "Cabeçalho",
+      "group": "Global",
+      "global": true,
+      "description": "Logotipo, menu (Comprar, Alugar e as páginas) e um botão. Aparece em todas as páginas.",
+      "fields": [
+        {
+          "key": "logoImage",
+          "label": "Logo (imagem)",
+          "type": "image",
+          "optional": true,
+          "help": "Sem imagem, vale o logotipo da loja; sem ele, o nome em texto."
+        },
+        {
+          "key": "logo",
+          "label": "Nome da marca",
+          "type": "text"
+        },
+        {
+          "key": "cta",
+          "label": "Botão do topo",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "ctaLink",
+          "label": "Link do botão",
+          "type": "text",
+          "help": "Ex.: /#anuncie ou o site para as imobiliárias se cadastrarem."
+        }
+      ]
+    },
+    {
+      "type": "hero",
+      "label": "Destaque com busca",
+      "group": "Topo",
+      "description": "Foto grande, título e a busca de imóveis com filtros rápidos.",
+      "fields": [
+        {
+          "key": "image",
+          "label": "Imagem de fundo",
+          "type": "image"
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Subtítulo",
+          "type": "area"
+        },
+        {
+          "key": "ops",
+          "label": "Abas da busca",
+          "type": "checks",
+          "options": [
+            {
+              "value": "VENDA",
+              "label": "Comprar"
+            },
+            {
+              "value": "LOCACAO",
+              "label": "Alugar"
+            },
+            {
+              "value": "TEMPORADA",
+              "label": "Temporada"
+            }
+          ]
+        },
+        {
+          "key": "chips",
+          "label": "Mais buscados",
+          "type": "items",
+          "max": 6,
+          "itemTitle": "label",
+          "help": "Cada um busca os imóveis com essa característica, escrita igual ao cadastro.",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Característica",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "label": "Nova característica"
+          }
+        },
+        {
+          "key": "stat",
+          "label": "Frase abaixo da busca",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "label": "Banner com chamada",
+      "group": "Topo",
+      "description": "Imagem larga com título, texto curto e um botão.",
+      "fields": [
+        {
+          "key": "image",
+          "label": "Imagem",
+          "type": "image"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "button",
+          "label": "Texto do botão",
+          "type": "text"
+        },
+        {
+          "key": "link",
+          "label": "Link do botão",
+          "type": "text",
+          "help": "Ex.: /imoveis, /#anuncie ou um endereço completo."
+        }
+      ]
+    },
+    {
+      "type": "listing",
+      "label": "Vitrine de imóveis",
+      "group": "Imóveis",
+      "dynamic": true,
+      "description": "Imóveis do cadastro, escolhidos por um filtro.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Subtítulo",
+          "type": "area"
+        },
+        {
+          "key": "source",
+          "label": "Quais imóveis mostrar",
+          "type": "select",
+          "options": [
+            {
+              "value": "destaques",
+              "label": "Marcados como destaque"
+            },
+            {
+              "value": "venda",
+              "label": "À venda"
+            },
+            {
+              "value": "aluguel",
+              "label": "Para alugar"
+            },
+            {
+              "value": "temporada",
+              "label": "Temporada"
+            },
+            {
+              "value": "caracteristica",
+              "label": "Com uma característica"
+            },
+            {
+              "value": "mobiliado",
+              "label": "Mobiliados"
+            },
+            {
+              "value": "recentes",
+              "label": "Mais recentes"
+            }
+          ]
+        },
+        {
+          "key": "feature",
+          "label": "Característica",
+          "type": "text",
+          "help": "Só para \"Com uma característica\": escrita igual ao cadastro, ex.: Frente mar."
+        },
+        {
+          "key": "count",
+          "label": "Quantidade",
+          "type": "select",
+          "options": [
+            {
+              "value": "3",
+              "label": "3 imóveis"
+            },
+            {
+              "value": "4",
+              "label": "4 imóveis"
+            },
+            {
+              "value": "6",
+              "label": "6 imóveis"
+            },
+            {
+              "value": "8",
+              "label": "8 imóveis"
+            }
+          ]
+        },
+        {
+          "key": "layout",
+          "label": "Formato",
+          "type": "select",
+          "options": [
+            {
+              "value": "carrossel",
+              "label": "Carrossel (rola para o lado)"
+            },
+            {
+              "value": "grade",
+              "label": "Grade"
+            }
+          ]
+        },
+        {
+          "key": "button",
+          "label": "Texto do link \"ver todos\"",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "categories",
+      "label": "Busca por categoria",
+      "group": "Imóveis",
+      "dynamic": true,
+      "description": "Atalhos como Frente mar ou Mobiliados, com a contagem de imóveis.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Subtítulo",
+          "type": "area"
+        },
+        {
+          "key": "items",
+          "label": "Categorias",
+          "type": "items",
+          "min": 1,
+          "max": 9,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Nome",
+              "type": "text"
+            },
+            {
+              "key": "kind",
+              "label": "Filtro",
+              "type": "select",
+              "options": [
+                {
+                  "value": "caracteristica",
+                  "label": "Característica"
+                },
+                {
+                  "value": "mobiliado",
+                  "label": "Mobiliados"
+                },
+                {
+                  "value": "aluguel",
+                  "label": "Para alugar"
+                },
+                {
+                  "value": "venda",
+                  "label": "À venda"
+                },
+                {
+                  "value": "destaques",
+                  "label": "Em destaque"
+                }
+              ]
+            },
+            {
+              "key": "feature",
+              "label": "Característica",
+              "type": "text",
+              "help": "Igual ao cadastro, ex.: Quadra mar."
+            }
+          ],
+          "newItem": {
+            "label": "Nova categoria",
+            "kind": "caracteristica",
+            "feature": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "cities",
+      "label": "Bairros e regiões",
+      "group": "Imóveis",
+      "description": "Cartões de bairros ou cidades que levam à busca.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Subtítulo",
+          "type": "area"
+        },
+        {
+          "key": "items",
+          "label": "Bairros",
+          "type": "items",
+          "min": 1,
+          "max": 8,
+          "itemTitle": "name",
+          "fields": [
+            {
+              "key": "image",
+              "label": "Imagem",
+              "type": "image"
+            },
+            {
+              "key": "name",
+              "label": "Nome",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "label": "Link",
+              "type": "text",
+              "help": "Ex.: /imoveis?cidade=Itapema ou /imoveis?bairro=Centro"
+            }
+          ],
+          "newItem": {
+            "image": "/_template/img/jardim-1.svg",
+            "name": "Novo bairro",
+            "link": "/imoveis"
+          }
+        }
+      ]
+    },
+    {
+      "type": "ctas",
+      "label": "Chamadas lado a lado",
+      "group": "Conteúdo",
+      "description": "Dois ou três cartões com imagem, texto e botão.",
+      "fields": [
+        {
+          "key": "items",
+          "label": "Chamadas",
+          "type": "items",
+          "min": 1,
+          "max": 3,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "image",
+              "label": "Imagem",
+              "type": "image"
+            },
+            {
+              "key": "title",
+              "label": "Título",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            },
+            {
+              "key": "button",
+              "label": "Texto do botão",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "label": "Link",
+              "type": "text",
+              "help": "Ex.: /imoveis, /#anuncie ou um endereço completo."
+            }
+          ],
+          "newItem": {
+            "image": "/_template/img/sala-2.svg",
+            "title": "Nova chamada",
+            "text": "Escreva aqui o convite.",
+            "button": "Saiba mais",
+            "link": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "about",
+      "label": "Sobre a imobiliária",
+      "group": "Conteúdo",
+      "description": "Foto, texto de apresentação e números da empresa.",
+      "fields": [
+        {
+          "key": "image",
+          "label": "Imagem",
+          "type": "image"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "stats",
+          "label": "Números",
+          "type": "items",
+          "max": 4,
+          "itemTitle": "value",
+          "fields": [
+            {
+              "key": "value",
+              "label": "Número",
+              "type": "text"
+            },
+            {
+              "key": "label",
+              "label": "Legenda",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "value": "10",
+            "label": "nova legenda"
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Texto",
+      "group": "Conteúdo",
+      "description": "Título e parágrafos, para páginas como Quem somos.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "body",
+          "label": "Texto",
+          "type": "area"
+        }
+      ]
+    },
+    {
+      "type": "indicators",
+      "label": "Indicadores do mercado",
+      "group": "Conteúdo",
+      "description": "CUB, INCC, IGP-M e outros índices, para quem compra ou investe.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Subtítulo",
+          "type": "area"
+        },
+        {
+          "key": "items",
+          "label": "Indicadores",
+          "type": "items",
+          "min": 1,
+          "max": 4,
+          "itemTitle": "name",
+          "fields": [
+            {
+              "key": "name",
+              "label": "Índice e mês",
+              "type": "text"
+            },
+            {
+              "key": "value",
+              "label": "Valor",
+              "type": "text"
+            },
+            {
+              "key": "detail",
+              "label": "Detalhe",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "name": "Índice",
+            "value": "0,00%",
+            "detail": "variação no mês"
+          }
+        }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "label": "Depoimentos",
+      "group": "Conteúdo",
+      "description": "O que os clientes dizem, em cartões.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "items",
+          "label": "Depoimentos",
+          "type": "items",
+          "min": 1,
+          "max": 6,
+          "itemTitle": "name",
+          "fields": [
+            {
+              "key": "quote",
+              "label": "Depoimento",
+              "type": "area"
+            },
+            {
+              "key": "name",
+              "label": "Nome",
+              "type": "text"
+            },
+            {
+              "key": "detail",
+              "label": "Detalhe",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "quote": "Escreva o depoimento.",
+            "name": "Nome do cliente",
+            "detail": "Comprou em ..."
+          }
+        }
+      ]
+    },
+    {
+      "type": "agencies",
+      "label": "Imobiliárias do portal",
+      "group": "Imóveis",
+      "description": "As imobiliárias participantes, com logo e nome. Cada uma leva ao site dela.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Texto",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "count",
+          "label": "Quantidade",
+          "type": "select",
+          "options": [
+            {
+              "value": "8",
+              "label": "Até 8"
+            },
+            {
+              "value": "12",
+              "label": "Até 12"
+            },
+            {
+              "value": "24",
+              "label": "Até 24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "join",
+      "label": "Convite para anunciar",
+      "group": "Contato",
+      "description": "Chamada para as imobiliárias entrarem no portal, com o botão para o cadastro. O link /#anuncie leva até aqui.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "button",
+          "label": "Botão",
+          "type": "text"
+        },
+        {
+          "key": "link",
+          "label": "Link do botão",
+          "type": "text",
+          "help": "O site de cadastro das imobiliárias (endereço completo)."
+        },
+        {
+          "key": "note",
+          "label": "Aviso",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "footer",
+      "label": "Rodapé",
+      "group": "Global",
+      "global": true,
+      "description": "Sobre o portal, os links de imóveis e o contato. Aparece em todas as páginas.",
+      "fields": [
+        {
+          "key": "about",
+          "label": "Sobre o portal",
+          "type": "area"
+        },
+        {
+          "key": "contactTitle",
+          "label": "Título do contato",
+          "type": "text"
+        },
+        {
+          "key": "contact",
+          "label": "Contato",
+          "type": "area",
+          "help": "E-mail, telefone, endereço: uma informação por linha."
+        },
+        {
+          "key": "note",
+          "label": "Linha final",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "sectionDefaults": {
+    "header": {
+      "logoImage": "",
+      "logo": "{empresa}",
+      "cta": "Anuncie no portal",
+      "ctaLink": "/#anuncie"
+    },
+    "hero": {
+      "image": "/_template/img/mar-1.svg",
+      "eyebrow": "Imóveis na sua cidade",
+      "title": "Encontre o imóvel certo para você",
+      "subtitle": "Apartamentos, casas e lançamentos das melhores imobiliárias da região, em uma busca só.",
+      "ops": [
+        "VENDA",
+        "LOCACAO"
+      ],
+      "chips": [
+        {
+          "label": "Frente mar"
+        },
+        {
+          "label": "Aceita pet"
+        },
+        {
+          "label": "Piscina"
+        }
+      ],
+      "stat": "Imóveis de várias imobiliárias, em uma busca só"
+    },
+    "banner": {
+      "image": "/_template/img/mar-2.svg",
+      "title": "Frente mar",
+      "subtitle": "Acordar com a vista do mar todos os dias.",
+      "button": "Ver imóveis frente mar",
+      "link": "/imoveis?caracteristica=Frente mar"
+    },
+    "listing": {
+      "title": "Imóveis em destaque",
+      "subtitle": "Os mais procurados desta semana.",
+      "source": "destaques",
+      "feature": "",
+      "count": "4",
+      "layout": "carrossel",
+      "button": "Ver todos os imóveis"
+    },
+    "categories": {
+      "title": "Encontre pelo que importa",
+      "subtitle": "A contagem acompanha o cadastro de imóveis.",
+      "items": [
+        {
+          "label": "Frente mar",
+          "kind": "caracteristica",
+          "feature": "Frente mar"
+        },
+        {
+          "label": "Mobiliados",
+          "kind": "mobiliado",
+          "feature": ""
+        },
+        {
+          "label": "Para alugar",
+          "kind": "aluguel",
+          "feature": ""
+        }
+      ]
+    },
+    "cities": {
+      "title": "Bairros e regiões",
+      "subtitle": "Escolha a região e veja o que está disponível.",
+      "items": [
+        {
+          "image": "/_template/img/mar-2.svg",
+          "name": "Centro",
+          "link": "/imoveis?bairro=Centro"
+        },
+        {
+          "image": "/_template/img/jardim-2.svg",
+          "name": "Bairro 2",
+          "link": "/imoveis"
+        },
+        {
+          "image": "/_template/img/predio-2.svg",
+          "name": "Bairro 3",
+          "link": "/imoveis"
+        }
+      ]
+    },
+    "ctas": {
+      "items": [
+        {
+          "image": "/_template/img/sala-1.svg",
+          "title": "É imobiliária?",
+          "text": "Anuncie seus imóveis no portal e receba os contatos de quem procura imóvel na região.",
+          "button": "Quero anunciar",
+          "link": "/#anuncie"
+        },
+        {
+          "image": "/_template/img/predio-1.svg",
+          "title": "Não achou o que procura?",
+          "text": "Busque por bairro, tipo, quartos e valor em todas as imobiliárias.",
+          "button": "Buscar imóveis",
+          "link": "/imoveis"
+        }
+      ]
+    },
+    "about": {
+      "image": "/_template/img/predio-3.svg",
+      "title": "Sobre nós",
+      "text": "Escreva aqui sobre o portal: a região, as imobiliárias participantes e como funciona.",
+      "stats": [
+        {
+          "value": "+100",
+          "label": "imóveis no portal"
+        },
+        {
+          "value": "10",
+          "label": "imobiliárias"
+        }
+      ]
+    },
+    "text": {
+      "title": "Sobre o portal",
+      "body": "Escreva aqui o conteúdo da página."
+    },
+    "indicators": {
+      "title": "Indicadores do mercado",
+      "subtitle": "Referências para quem compra na planta ou reajusta contrato.",
+      "items": [
+        {
+          "name": "CUB · mês/ano",
+          "value": "R$ 0.000,00/m²",
+          "detail": "variação no mês"
+        },
+        {
+          "name": "INCC · mês/ano",
+          "value": "0,00%",
+          "detail": "variação no mês"
+        },
+        {
+          "name": "IGP-M · mês/ano",
+          "value": "0,00%",
+          "detail": "variação no mês"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Quem encontrou imóvel aqui",
+      "items": [
+        {
+          "quote": "Escreva aqui um depoimento de um cliente de verdade.",
+          "name": "Nome do cliente",
+          "detail": "Comprou em ..."
+        }
+      ]
+    },
+    "footer": {
+      "about": "{empresa}: imóveis para comprar e alugar das melhores imobiliárias da região.",
+      "contactTitle": "Contato",
+      "contact": "",
+      "note": "Os imóveis são anunciados pelas imobiliárias participantes."
+    },
+    "agencies": {
+      "title": "Imobiliárias do portal",
+      "subtitle": "Os imóveis são anunciados por estas imobiliárias.",
+      "count": "12"
+    },
+    "join": {
+      "title": "É imobiliária?",
+      "text": "Anuncie seus imóveis no portal e receba os contatos de quem procura imóvel na região.",
+      "button": "Quero anunciar",
+      "link": "",
+      "note": ""
+    }
+  },
+  "defaults": {
+    "theme": {
+      "palette": "oceano",
+      "fonts": "classica"
+    },
+    "pages": [
+      {
+        "title": "Início",
+        "slug": "/",
+        "menu": false,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          "hero",
+          "listing",
+          "categories",
+          "banner",
+          {
+            "type": "listing",
+            "props": {
+              "title": "Para alugar",
+              "subtitle": "Imóveis para morar com contrato anual.",
+              "source": "aluguel",
+              "layout": "grade",
+              "button": "Ver aluguéis"
+            }
+          },
+          "agencies",
+          "cities",
+          "ctas",
+          "join"
+        ]
+      },
+      {
+        "title": "Sobre",
+        "slug": "/sobre",
+        "menu": true,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          {
+            "type": "banner",
+            "props": {
+              "image": "/_template/img/predio-3.svg",
+              "title": "Sobre nós",
+              "subtitle": "Conheça o portal.",
+              "button": "Ver imóveis",
+              "link": "/imoveis"
+            }
+          },
+          "about",
+          "text",
+          "join"
+        ]
+      }
+    ],
+    "newPage": [
+      "banner",
+      "text",
+      "join"
+    ]
+  },
+  "variables": "Os textos aceitam {empresa}: o nome do portal (Plataforma › Portais).",
+  "variableKeys": [
+    "empresa"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "template-portal-0001",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Template de site de portal de imóveis da plataforma (00047): busca e vitrines de todas as imobiliárias participantes, com o @ocahub/kit no modo portal e seções editáveis no painel (SysAdmin)",
+  "scripts": {
+    "dev": "nuxt dev --port 3026",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "kit:sync": "npm --prefix ../rhfactor-kit run build && npm install --no-save --install-links ../rhfactor-kit --no-audit --no-fund",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@ocahub/kit": "^0.14.0",
+    "nuxt": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.0",
+    "vue-tsc": "^3.1.0"
+  }
+}

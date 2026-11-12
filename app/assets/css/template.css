@@ -1,0 +1,178 @@
+/* template-imobiliaria-0001 (00047). Cores e fontes vem da aparencia escolhida
+   no painel (variaveis --t-*, no layout). As paginas do kit (busca, imovel)
+   usam os tokens --rh-* ligados aos mesmos valores. */
+
+html, body { margin: 0; }
+
+.tpl {
+  /* Os componentes do kit (vitrine, busca, categorias, paginas de imovel) com as cores do template. */
+  --rh-color-accent: var(--t-accent);
+  --rh-color-accent-contrast: #fff;
+  --rh-color-text: var(--t-ink);
+  --rh-color-surface: var(--t-soft);
+  --rh-font: var(--t-body);
+  font-family: var(--t-body);
+  color: var(--t-ink);
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.tpl *, .tpl *::before, .tpl *::after { box-sizing: border-box; }
+.tpl a { color: inherit; text-decoration: none; }
+.tpl-main { flex: 1; }
+.t-wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+
+.t-h1 { font-family: var(--t-display); font-weight: var(--t-dw); font-size: 52px; line-height: 1.05; letter-spacing: -.01em; margin: 0 0 14px; max-width: 16ch; text-wrap: balance; }
+.t-h2 { font-family: var(--t-display); font-weight: var(--t-dw); font-size: 34px; line-height: 1.1; margin: 0; color: var(--t-primary); text-wrap: balance; }
+.t-sub { margin: 6px 0 0; color: #5d6b76; font-size: 16px; }
+.t-body { font-size: 16px; color: #3f4c57; margin: 14px 0 0; max-width: 62ch; white-space: pre-line; }
+.t-center { text-align: center; margin-bottom: 28px; }
+.t-narrow { max-width: 760px; }
+.t-empty { color: #6b7a86; padding: 24px 0; }
+
+.tpl .t-btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: 14px; white-space: nowrap; border: 0; cursor: pointer; font-family: inherit; }
+.tpl .t-btn--accent { background: var(--t-accent); color: #fff; }
+.tpl .t-btn--light { background: #fff; color: var(--t-primary); }
+.tpl .t-btn--big { padding: 16px 28px; font-size: 16px; }
+
+/* Cabecalho */
+.t-header { background: #fff; border-bottom: 1px solid rgba(0, 0, 0, .07); position: sticky; top: 0; z-index: 30; }
+.t-header__row { display: flex; align-items: center; gap: 28px; height: 76px; }
+.t-logo { display: flex; align-items: center; gap: 10px; font-family: var(--t-display); font-weight: var(--t-dw); font-size: 21px; color: var(--t-primary); white-space: nowrap; }
+.t-logo__img { height: 54px; width: auto; display: block; }
+.t-logo__mark { width: 28px; height: 28px; flex: none; border-radius: 50% 50% 50% 4px; background: linear-gradient(135deg, var(--t-accent), var(--t-primary)); }
+.t-nav { display: flex; gap: 22px; font-weight: 600; font-size: 14px; }
+.t-nav a:hover { color: var(--t-accent); }
+.t-header__cta { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.t-phone { font-weight: 700; font-size: 14px; color: var(--t-primary); }
+.t-burger { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.t-burger i { display: block; width: 22px; height: 2px; margin: 4px 0; background: var(--t-primary); }
+
+/* Destaque com busca */
+.t-hero { background-size: cover; background-position: center; color: #fff; padding: 96px 0 56px; }
+.t-eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 12px; font-weight: 700; margin: 0 0 14px; opacity: .92; }
+.t-lead { font-size: 18px; max-width: 52ch; margin: 0 0 28px; opacity: .94; }
+.t-search { max-width: 880px; }
+.tpl .rh-searchbox__tab { color: var(--t-primary); }
+.tpl .rh-searchbox__tab.rh-searchbox__tab--on { background: var(--t-primary); color: #fff; }
+.t-stat { margin: 22px 0 0; font-weight: 700; font-size: 15px; }
+
+/* Secoes comuns */
+.t-sec { padding: 64px 0; }
+.t-soft { background: var(--t-soft); }
+.t-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.tpl .t-more { font-weight: 700; color: var(--t-accent); white-space: nowrap; font-size: 14px; }
+
+/* Vitrine e cartao do imovel (componentes do kit) */
+.tpl .rh-ptile { border-radius: 16px; border-color: rgba(0, 0, 0, .08); }
+.tpl .rh-ptile__title { color: var(--t-ink); }
+.tpl .rh-ptile__price b { color: var(--t-primary); }
+
+/* Banner */
+.t-banner { background-size: cover; background-position: center; padding: 110px 0; color: #fff; }
+.t-banner .t-h2 { color: #fff; font-size: 44px; max-width: 14ch; }
+.t-banner p { font-size: 18px; max-width: 40ch; margin: 12px 0 24px; }
+
+/* Categorias (componente do kit) */
+.tpl .rh-categories__item b { color: var(--t-primary); }
+
+/* Bairros */
+.t-cities { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.tpl .t-city { aspect-ratio: 3 / 4; border-radius: 16px; overflow: hidden; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; color: #fff; }
+.t-city > span { font-family: var(--t-display); font-weight: var(--t-dw); font-size: 22px; line-height: 1.1; }
+.t-city small { font-weight: 700; font-size: 12px; opacity: .9; margin-top: 6px; }
+
+/* Chamadas */
+.t-ctas { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 20px; }
+.tpl .t-cta { display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 8px; min-height: 280px; padding: 28px; border-radius: 20px; background-size: cover; background-position: center; color: #fff; }
+.t-cta h3 { font-family: var(--t-display); font-weight: var(--t-dw); font-size: 26px; line-height: 1.15; margin: 0; max-width: 18ch; }
+.t-cta p { margin: 0 0 8px; max-width: 40ch; opacity: .94; }
+
+/* Corretor */
+.t-agent { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: center; }
+.t-agent__img { aspect-ratio: 3 / 4; border-radius: 20px; background-size: cover; background-position: center top; }
+.t-role { color: var(--t-accent); font-weight: 700; font-size: 14px; margin: 8px 0 0; }
+.t-agent .t-btn { margin-top: 24px; }
+
+/* Sobre */
+.t-about { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.t-about__img { aspect-ratio: 5 / 4; border-radius: 20px; background-size: cover; background-position: center; }
+.t-stats { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 28px; }
+.t-stats b { display: block; font-family: var(--t-display); font-weight: var(--t-dw); font-size: 34px; line-height: 1; color: var(--t-accent); }
+.t-stats small { font-size: 13px; color: #5d6b76; font-weight: 700; }
+
+/* Indicadores */
+.t-ind { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 16px; }
+.t-ind > div { border-top: 3px solid var(--t-accent); background: var(--t-soft); padding: 18px 20px; border-radius: 0 0 12px 12px; }
+.t-ind small { display: block; color: #6b7a86; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.t-ind b { display: block; font-size: 26px; color: var(--t-primary); margin: 6px 0 2px; font-variant-numeric: tabular-nums; }
+.t-ind__detail { font-size: 13px; color: #5d6b76; }
+
+/* Depoimentos */
+.t-quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.t-quote { margin: 0; background: #fff; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.t-quote blockquote { margin: 0; font-size: 15px; color: #33414c; }
+.t-quote blockquote::before { content: '\201C'; display: block; font-family: var(--t-display); font-size: 48px; line-height: .6; color: var(--t-accent); margin-bottom: 10px; }
+.t-quote figcaption b { display: block; color: var(--t-primary); }
+.t-quote figcaption small { color: #6b7a86; }
+
+/* Contato */
+.t-contact { background: var(--t-primary); color: #fff; padding: 56px 0; }
+.t-contact__row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+.t-contact .t-h2 { color: #fff; }
+.t-contact p { opacity: .86; margin: 10px 0 0; font-size: 16px; }
+.t-contact__cta { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.t-contact__cta small { font-size: 12px; opacity: .72; }
+.t-contact__missing { background: rgba(255, 255, 255, .1); border-radius: 12px; padding: 12px 14px; font-size: 14px; }
+
+/* Rodape */
+.t-footer { background: color-mix(in srgb, var(--t-primary) 82%, black); color: rgba(255, 255, 255, .78); padding: 48px 0 20px; font-size: 14px; }
+.t-footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+.t-footer h4 { color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; margin: 0 0 12px; }
+.t-footer p { margin: 0 0 8px; }
+.t-logo--footer { color: #fff; margin-bottom: 12px; }
+.t-footer__copy { border-top: 1px solid rgba(255, 255, 255, .12); margin-top: 32px; padding-top: 16px; font-size: 12px; opacity: .72; }
+
+/* Erro */
+.t-error { padding: 96px 32px; text-align: center; }
+.t-error__code { font-family: var(--t-display); font-size: 64px; color: var(--t-accent); margin: 0; }
+.t-error p { color: #5d6b76; margin: 12px 0 24px; }
+
+/* As paginas do kit (busca, imovel) dentro do layout do template. */
+.tpl .rh-container { max-width: 1160px; margin: 0 auto; padding: 32px; }
+
+@media (max-width: 760px) {
+  .t-wrap { padding: 0 18px; }
+  .t-header__row { height: 64px; gap: 12px; }
+  .t-logo__img { height: 38px; }
+  .t-header__cta { display: none; }
+  .t-burger { display: block; margin-left: auto; }
+  .t-nav { display: none; position: absolute; left: 0; right: 0; top: 64px; background: #fff; flex-direction: column; gap: 0; border-bottom: 1px solid rgba(0, 0, 0, .08); }
+  .t-nav--open { display: flex; }
+  .t-nav a { padding: 14px 18px; border-top: 1px solid rgba(0, 0, 0, .05); }
+  .t-hero { padding: 56px 0 36px; }
+  .t-h1 { font-size: 34px; }
+  .t-lead { font-size: 16px; }
+  .t-sec { padding: 44px 0; }
+  .t-h2 { font-size: 27px; }
+  .t-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .t-banner { padding: 72px 0; }
+  .t-banner .t-h2 { font-size: 32px; }
+  .t-ctas, .t-quotes, .t-about, .t-contact__row, .t-footer__grid, .t-ind { grid-template-columns: 1fr; }
+  .t-cities { grid-template-columns: 1fr 1fr; }
+  .t-agent { grid-template-columns: 1fr; gap: 24px; }
+  .t-agent__img { max-width: 240px; }
+  .t-about { gap: 24px; }
+  .tpl .rh-container { padding: 20px 18px; }
+}
+
+/* Portal (template-portal-0001): as imobiliarias participantes. */
+.t-agencies { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.t-agency { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 22px 16px; border-radius: 14px; background: #fff; border: 1px solid rgba(0, 0, 0, .08); color: inherit; text-decoration: none; text-align: center; min-height: 150px; transition: box-shadow .2s; }
+a.t-agency:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, .08); }
+.t-agency img { max-width: 140px; max-height: 64px; object-fit: contain; }
+.t-agency__initial { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--t-primary, #1f3a5f); color: #fff; font-size: 26px; font-weight: 700; }
+.t-agency b { font-size: 15px; }
