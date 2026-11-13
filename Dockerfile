@@ -46,6 +46,8 @@ ARG RHFACTOR_PORTAL=""
 # Conteudo do site (00047): de onde vem a versao publicada e quais paineis abrem o editor.
 ARG RHFACTOR_CLOUD_BASE="http://host.docker.internal:8088"
 ARG RHFACTOR_PANEL_ORIGIN=""
+# Blog (00049): os posts no ar, lidos no build (as paginas do blog sao estaticas).
+ARG RHFACTOR_MEDIA_BASE="http://host.docker.internal:8100"
 ENV RHFACTOR_STORE_ID=$RHFACTOR_STORE_ID \
     RHFACTOR_API_BASE=$RHFACTOR_API_BASE \
     RHFACTOR_GOOGLE_ANALYTICS_ID=$RHFACTOR_GOOGLE_ANALYTICS_ID \
@@ -56,6 +58,7 @@ ENV RHFACTOR_STORE_ID=$RHFACTOR_STORE_ID \
     RHFACTOR_PORTAL=$RHFACTOR_PORTAL \
     RHFACTOR_CLOUD_BASE=$RHFACTOR_CLOUD_BASE \
     RHFACTOR_PANEL_ORIGIN=$RHFACTOR_PANEL_ORIGIN \
+    RHFACTOR_MEDIA_BASE=$RHFACTOR_MEDIA_BASE \
     NODE_ENV=production
 RUN npx nuxt prepare && npm run build
 
