@@ -12,9 +12,9 @@ const search = (useRuntimeConfig().public.rhfactor as { shelfPath?: string }).sh
           <RhText tag="h2" class="t-h2" path="title" :value="p.title" ph="Título" />
           <RhText tag="p" class="t-sub" path="subtitle" :value="p.subtitle" ph="Subtítulo" ml />
         </div>
-        <NuxtLink class="t-more" :to="rhShowcaseLink(search, p.source, p.feature)"><RhText path="button" :value="p.button" ph="Ver todos" /></NuxtLink>
+        <NuxtLink class="t-more" :to="rhShowcaseLink(search, p.source, p.feature, p.type)"><RhText path="button" :value="p.button" ph="Ver todos" /></NuxtLink>
       </div>
-      <RhPropertyShowcase :kind="p.source" :feature="p.feature" :count="p.count" :layout="p.layout" />
+      <RhPropertyShowcase :kind="p.source" :feature="p.feature" :type="p.type" :count="p.count" :layout="p.layout" />
     </div>
   </section>
 </template>

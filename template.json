@@ -249,6 +249,18 @@
               "label": "Mobiliados"
             },
             {
+              "value": "tipo",
+              "label": "De um tipo (apartamento, casa...)"
+            },
+            {
+              "value": "lancamento",
+              "label": "Lançamentos"
+            },
+            {
+              "value": "pronto",
+              "label": "Prontos para morar"
+            },
+            {
               "value": "recentes",
               "label": "Mais recentes"
             }
@@ -259,6 +271,78 @@
           "label": "Característica",
           "type": "text",
           "help": "Só para \"Com uma característica\": escrita igual ao cadastro, ex.: Frente mar."
+        },
+        {
+          "key": "type",
+          "label": "Tipo de imóvel",
+          "type": "select",
+          "help": "Só para \"De um tipo\".",
+          "options": [
+            {
+              "value": "",
+              "label": "—"
+            },
+            {
+              "value": "APARTAMENTO",
+              "label": "Apartamento"
+            },
+            {
+              "value": "COBERTURA",
+              "label": "Cobertura"
+            },
+            {
+              "value": "KITNET",
+              "label": "Kitnet / Studio"
+            },
+            {
+              "value": "FLAT",
+              "label": "Flat"
+            },
+            {
+              "value": "CASA",
+              "label": "Casa"
+            },
+            {
+              "value": "SOBRADO",
+              "label": "Sobrado"
+            },
+            {
+              "value": "CASA_CONDOMINIO",
+              "label": "Casa em condomínio"
+            },
+            {
+              "value": "TERRENO",
+              "label": "Terreno"
+            },
+            {
+              "value": "LOTE_CONDOMINIO",
+              "label": "Lote em condomínio"
+            },
+            {
+              "value": "SALA_COMERCIAL",
+              "label": "Sala comercial"
+            },
+            {
+              "value": "LOJA",
+              "label": "Loja / Ponto comercial"
+            },
+            {
+              "value": "GALPAO",
+              "label": "Galpão / Pavilhão"
+            },
+            {
+              "value": "PREDIO",
+              "label": "Prédio"
+            },
+            {
+              "value": "CHACARA",
+              "label": "Chácara / Sítio"
+            },
+            {
+              "value": "FAZENDA",
+              "label": "Fazenda / Área rural"
+            }
+          ]
         },
         {
           "key": "count",
@@ -359,6 +443,18 @@
                 {
                   "value": "destaques",
                   "label": "Em destaque"
+                },
+                {
+                  "value": "tipo",
+                  "label": "Tipo de imóvel"
+                },
+                {
+                  "value": "lancamento",
+                  "label": "Lançamentos"
+                },
+                {
+                  "value": "pronto",
+                  "label": "Prontos para morar"
                 }
               ]
             },
@@ -367,12 +463,85 @@
               "label": "Característica",
               "type": "text",
               "help": "Igual ao cadastro, ex.: Quadra mar."
+            },
+            {
+              "key": "type",
+              "label": "Tipo de imóvel",
+              "type": "select",
+              "help": "Só para o filtro \"Tipo de imóvel\".",
+              "options": [
+                {
+                  "value": "",
+                  "label": "—"
+                },
+                {
+                  "value": "APARTAMENTO",
+                  "label": "Apartamento"
+                },
+                {
+                  "value": "COBERTURA",
+                  "label": "Cobertura"
+                },
+                {
+                  "value": "KITNET",
+                  "label": "Kitnet / Studio"
+                },
+                {
+                  "value": "FLAT",
+                  "label": "Flat"
+                },
+                {
+                  "value": "CASA",
+                  "label": "Casa"
+                },
+                {
+                  "value": "SOBRADO",
+                  "label": "Sobrado"
+                },
+                {
+                  "value": "CASA_CONDOMINIO",
+                  "label": "Casa em condomínio"
+                },
+                {
+                  "value": "TERRENO",
+                  "label": "Terreno"
+                },
+                {
+                  "value": "LOTE_CONDOMINIO",
+                  "label": "Lote em condomínio"
+                },
+                {
+                  "value": "SALA_COMERCIAL",
+                  "label": "Sala comercial"
+                },
+                {
+                  "value": "LOJA",
+                  "label": "Loja / Ponto comercial"
+                },
+                {
+                  "value": "GALPAO",
+                  "label": "Galpão / Pavilhão"
+                },
+                {
+                  "value": "PREDIO",
+                  "label": "Prédio"
+                },
+                {
+                  "value": "CHACARA",
+                  "label": "Chácara / Sítio"
+                },
+                {
+                  "value": "FAZENDA",
+                  "label": "Fazenda / Área rural"
+                }
+              ]
             }
           ],
           "newItem": {
             "label": "Nova categoria",
             "kind": "caracteristica",
-            "feature": ""
+            "feature": "",
+            "type": ""
           }
         }
       ]
