@@ -1,7 +1,7 @@
 {
   "id": "template-portal-0001",
   "name": "Portal 0001 · Imóveis da região",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Site de portal de imóveis (da plataforma): busca, vitrines de todas as imobiliárias participantes, categorias, bairros, a lista das imobiliárias e o convite para anunciar.",
   "modules": [
     "portal"
@@ -71,6 +71,9 @@
       "group": "Global",
       "global": true,
       "description": "Logotipo, menu (Comprar, Alugar e as páginas) e um botão. Aparece em todas as páginas.",
+      "skeleton": [
+        "nav"
+      ],
       "fields": [
         {
           "key": "logoImage",
@@ -103,6 +106,9 @@
       "label": "Destaque com busca",
       "group": "Topo",
       "description": "Foto grande, título e a busca de imóveis com filtros rápidos.",
+      "skeleton": [
+        "@image @center eyebrow title:lg text:1 search chips:4"
+      ],
       "fields": [
         {
           "key": "image",
@@ -173,6 +179,9 @@
       "label": "Banner com chamada",
       "group": "Topo",
       "description": "Imagem larga com título, texto curto e um botão.",
+      "skeleton": [
+        "@image title text:1 button"
+      ],
       "fields": [
         {
           "key": "image",
@@ -208,6 +217,10 @@
       "group": "Imóveis",
       "dynamic": true,
       "description": "Imóveis do cadastro, escolhidos por um filtro.",
+      "skeleton": [
+        "title text:1",
+        "cards:4"
+      ],
       "fields": [
         {
           "key": "title",
@@ -395,6 +408,10 @@
       "group": "Imóveis",
       "dynamic": true,
       "description": "Atalhos como Frente mar ou Mobiliados, com a contagem de imóveis.",
+      "skeleton": [
+        "@center title text:1",
+        "chips:5"
+      ],
       "fields": [
         {
           "key": "title",
@@ -551,6 +568,10 @@
       "label": "Bairros e regiões",
       "group": "Imóveis",
       "description": "Cartões de bairros ou cidades que levam à busca.",
+      "skeleton": [
+        "title text:1",
+        "gallery:4"
+      ],
       "fields": [
         {
           "key": "title",
@@ -600,6 +621,9 @@
       "label": "Chamadas lado a lado",
       "group": "Conteúdo",
       "description": "Dois ou três cartões com imagem, texto e botão.",
+      "skeleton": [
+        "cards:2"
+      ],
       "fields": [
         {
           "key": "items",
@@ -651,6 +675,9 @@
       "label": "Sobre a imobiliária",
       "group": "Conteúdo",
       "description": "Foto, texto de apresentação e números da empresa.",
+      "skeleton": [
+        "image | title text stats:3"
+      ],
       "fields": [
         {
           "key": "image",
@@ -697,6 +724,9 @@
       "label": "Texto",
       "group": "Conteúdo",
       "description": "Título e parágrafos, para páginas como Quem somos.",
+      "skeleton": [
+        "title text:6"
+      ],
       "fields": [
         {
           "key": "title",
@@ -715,6 +745,10 @@
       "label": "Indicadores do mercado",
       "group": "Conteúdo",
       "description": "CUB, INCC, IGP-M e outros índices, para quem compra ou investe.",
+      "skeleton": [
+        "@soft title text:1",
+        "stats:4"
+      ],
       "fields": [
         {
           "key": "title",
@@ -763,6 +797,10 @@
       "label": "Depoimentos",
       "group": "Conteúdo",
       "description": "O que os clientes dizem, em cartões.",
+      "skeleton": [
+        "title",
+        "quotes:3"
+      ],
       "fields": [
         {
           "key": "title",
@@ -806,6 +844,10 @@
       "label": "Imobiliárias do portal",
       "group": "Imóveis",
       "description": "As imobiliárias participantes, com logo e nome. Cada uma leva ao site dela.",
+      "skeleton": [
+        "@center title text:1",
+        "gallery:5"
+      ],
       "fields": [
         {
           "key": "title",
@@ -844,6 +886,9 @@
       "label": "Convite para anunciar",
       "group": "Contato",
       "description": "Chamada para as imobiliárias entrarem no portal, com o botão para o cadastro. O link /#anuncie leva até aqui.",
+      "skeleton": [
+        "@soft @center title text:2 button"
+      ],
       "fields": [
         {
           "key": "title",
@@ -880,6 +925,9 @@
       "group": "Global",
       "global": true,
       "description": "Sobre o portal, os links de imóveis e o contato. Aparece em todas as páginas.",
+      "skeleton": [
+        "@dark text:3 | links:2"
+      ],
       "fields": [
         {
           "key": "about",
