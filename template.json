@@ -4,6 +4,7 @@
   "version": "1.1.0",
   "description": "Site de portal de imóveis (da plataforma): busca, vitrines de todas as imobiliárias participantes, categorias, bairros, a lista das imobiliárias e o convite para anunciar.",
   "cover": "preview.png",
+  "screenshot": "preview-full.jpg",
   "modules": [
     "portal"
   ],
